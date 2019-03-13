@@ -5,6 +5,10 @@ class CashRegister
     @total = total
     @discount = discount
     @items = []
+    @last_item = ""
+    @last_price = 0.0
+    @last_quantity = 0
+    
   end
 
   def add_item(item, price, quantity = 1)
@@ -22,5 +26,12 @@ class CashRegister
       output_string = "There is no discount to apply."
     end
     output_string
+  end
+
+  def void_last_transaction
+    if last_quantity != 0
+      @total -= last_quantity * last_price
+      items.pop
+    end
   end
 end
