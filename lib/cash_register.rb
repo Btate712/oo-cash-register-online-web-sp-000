@@ -8,7 +8,7 @@ class CashRegister
     @last_item = ""
     @last_price = 0.0
     @last_quantity = 0
-    
+
   end
 
   def add_item(item, price, quantity = 1)
